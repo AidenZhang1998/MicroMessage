@@ -24,8 +24,8 @@ public class MessageDao {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn = DriverManager.getConnection(
-					"jdbc:mysql://114.116.163.105:3306/micro_message?useUnicode=true&characterEncoding=utf-8", "root",
-					"Aa184550!");
+					"jdbc:mysql://127.0.0.1:3306/micro_message?useUnicode=true&characterEncoding=utf-8", "root",
+					"");
 			StringBuilder sql = new StringBuilder("select ID,COMMAND,DESCRIPTION,CONTENT FROM MESSAGE where 1=1");
 			List<String> paramList = new ArrayList<String>();
         /*
