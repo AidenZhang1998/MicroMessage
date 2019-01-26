@@ -24,7 +24,10 @@ public class MessageDao {
 		SqlSession sqlSession = null;
 		try {
 			sqlSession = dbAccess.getSqlSession();
-			messageList=sqlSession.selectList("Message.QueryMessageList");
+			Message message =new Message();
+			message.setCommand(command);
+			message.setDescription(description);
+			messageList=sqlSession.selectList("Message.QueryMessageList",message);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

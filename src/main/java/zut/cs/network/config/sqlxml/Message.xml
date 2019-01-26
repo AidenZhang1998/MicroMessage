@@ -29,8 +29,23 @@
     <result column="CONTENT" jdbcType="VARCHAR" property="content"/>
   </resultMap>
 
-  <select id="QueryMessageList"  resultMap="MessageResult">
-    select ID,COMMAND,DESCRIPTION,CONTENT FROM MESSAGE where 1=1{id:INTEGER}
+  <select id="QueryMessageList" parameterType="zut.cs.network.bean.Message" resultMap="MessageResult">
+     select ID,COMMAND,DESCRIPTION,CONTENT from MESSAGE
+    <where>
+    	<if test="command != null and !&quot;&quot;.equals(command.trim())">
+	    	and COMMAND=#{command}
+	    </if>
+	    <if test="description != null and !&quot;&quot;.equals(description.trim())">
+	    	and DESCRIPTION like '%' #{description} '%'
+	    </if>
+    </where>
+    <!-- select ID,COMMAND,DESCRIPTION,CONTENT FROM MESSAGE where 1=1{id:INTEGER}
+    <if test="COMMAND!=null and !&quot;&quot;.equals(command.trim())">
+    AND COMMAND=#{command}
+    </if>
+    <if test="DESCRIPTION !=null and !&quot;&quot;.equals(description.trim())">
+        AND DESCRIPTION=like '%' #{description} '%'
+    </if> -->
   </select>
 
   <!-- <select id="version" parameterType="long" resultType="int">
