@@ -39,15 +39,10 @@
 	    	and DESCRIPTION like '%' #{description} '%'
 	    </if>
     </where>
-    <!-- select ID,COMMAND,DESCRIPTION,CONTENT FROM MESSAGE where 1=1{id:INTEGER}
-    <if test="COMMAND!=null and !&quot;&quot;.equals(command.trim())">
-    AND COMMAND=#{command}
-    </if>
-    <if test="DESCRIPTION !=null and !&quot;&quot;.equals(description.trim())">
-        AND DESCRIPTION=like '%' #{description} '%'
-    </if> -->
   </select>
-
+<delete id="DeleteOne" parameterType="int">
+    DELETE FROM MESSAGE WHERE ID = #{_parameter}
+  </delete>
   <!-- <select id="version" parameterType="long" resultType="int">
     SELECT version FROM user WHERE id = #{id,jdbcType=INTEGER}
   </select>

@@ -65,4 +65,23 @@ public class MessageDao {
 		 */
 		return messageList;
 	}
+	public void  DeleteOne(int id) {
+		/**
+		 * 根据删除条件删除一条消息
+		 */
+		DBAccess dbAccess = new DBAccess();
+		SqlSession sqlSession = null;
+		try {
+			sqlSession = dbAccess.getSqlSession();
+			sqlSession.delete("Message.DeleteOne",id);
+			sqlSession.commit();
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			if (sqlSession != null)
+				sqlSession.close();
+		}
+	}
 }
