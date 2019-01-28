@@ -27,4 +27,13 @@
      <servlet-name>DeleteOneServlet</servlet-name>
      <url-pattern>/DeleteOneServlet.action</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>DeleteBatchServlet</servlet-name>
+    <servlet-class>zut.cs.network.servlet.DeleteBatchServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+     <servlet-name>DeleteBatchServlet</servlet-name>
+     <url-pattern>/DeleteBatchServlet.action</url-pattern>
+  </servlet-mapping>
 </web-app>
