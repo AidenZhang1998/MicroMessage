@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import zut.cs.network.service.ListService;
+import zut.cs.network.service.QueryService;
 
 /*
  * 列表初始化控制
@@ -25,7 +25,7 @@ public class ListServlet extends HttpServlet {
 		// 向页面传值
 		req.setAttribute("command", command);
 		req.setAttribute("description", description);		
-		ListService listService = new ListService();
+		QueryService listService = new QueryService();
 		//查询消息列表并传给页面
 		req.setAttribute("messageList", listService.QueryMessageList(command, description));
 		// 跳转页面

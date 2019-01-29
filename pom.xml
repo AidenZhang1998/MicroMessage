@@ -47,7 +47,7 @@
 			<version>5.1.8</version>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/org.apache.taglibs/taglibs-standard-impl -->
+		<!-- https://mvnrepo sitory.com/artifact/org.apache.taglibs/taglibs-standard-impl -->
 		<dependency>
 			<groupId>org.apache.taglibs</groupId>
 			<artifactId>taglibs-standard-impl</artifactId>

@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import zut.cs.network.service.MaintainService;
 /**
- * 批量删除控制层
- *
+ * 
+ *批量删除控制层
  */
 @SuppressWarnings("serial")
 public class DeleteBatchServlet extends HttpServlet{
@@ -23,7 +23,7 @@ public class DeleteBatchServlet extends HttpServlet{
 		String[] ids = req.getParameterValues("id");
 		MaintainService maintainService = new MaintainService();
 		maintainService.DeleteBatch(ids);
-		// 跳转页面
+		// 跳转页面 
 		req.getRequestDispatcher("/List.action").forward(req, resp);
 
 	}
