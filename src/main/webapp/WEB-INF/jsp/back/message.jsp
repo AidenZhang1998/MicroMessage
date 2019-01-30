@@ -60,8 +60,6 @@
 			</div>
 		</div>
 		<div>
-
-
 			<input class="return"
 				onclick="javascript:location.href='${basePath}List.action'"
 				type="button" title="返回" value="返回" /> 

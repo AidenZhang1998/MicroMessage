@@ -19,7 +19,10 @@
 			<div class="right">
 				<div class="current">当前位置：<a href="javascript:void(0)" style="color:#6E6E6E;">内容管理</a> &gt; 内容列表</div>
 				<div class="rightCont">
-					<p class="g_title fix">内容列表 <a class="btn03"  href="${basePath}CreateOneServlet.action">新 增</a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="btn03" href="javascript:DeleteBatch('<%= basePath%>');">批量删 除</a></p>
+					<p class="g_title fix">内容列表
+					 <a class="btn03"  href="${basePath}InitTalkServlet.action">功能预览</a>&nbsp;&nbsp;&nbsp;&nbsp;
+					 <a class="btn03"  href="${basePath}CreateOneServlet.action">新 增</a>&nbsp;&nbsp;&nbsp;&nbsp;
+					 <a class="btn03" href="javascript:DeleteBatch('<%= basePath%>');">批量删 除</a></p>
 					<table class="tab1">
 						<tbody>
 							<tr>
