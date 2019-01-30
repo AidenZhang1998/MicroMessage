@@ -6,7 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class MaintainServiceTest {
-	MaintainService maintainService;
+	/*MaintainService maintainService;
 	@Before
 	public void setUp() throws Exception {
 	 maintainService =new MaintainService();
@@ -26,6 +26,6 @@ public class MaintainServiceTest {
 	@Test
 	public void testCreateOne() {
 		maintainService.CreateOne("test", "test", "test");
-	}
+	}*/
 
 }

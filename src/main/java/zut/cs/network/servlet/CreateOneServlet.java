@@ -38,5 +38,6 @@ public class CreateOneServlet extends HttpServlet {
         ){
             new MaintainService().CreateOne(command, description, content);
         }
+        req.getRequestDispatcher("/WEB-INF/jsp/back/message.jsp").forward(req, resp);
     }
 }
