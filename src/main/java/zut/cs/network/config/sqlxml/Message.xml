@@ -29,6 +29,8 @@
     <result column="CONTENT" jdbcType="VARCHAR" property="content"/>
   </resultMap>
 
+
+
   <select id="QueryMessageList" parameterType="zut.cs.network.bean.Message" resultMap="MessageResult">
      select ID,COMMAND,DESCRIPTION,CONTENT from MESSAGE
     <where>
@@ -40,7 +42,11 @@
 	    </if>
     </where>
   </select>
-<delete id="DeleteOne" parameterType="int">
+  
+  
+  
+  
+ <delete id="DeleteOne" parameterType="int">
     DELETE FROM MESSAGE WHERE ID = #{_parameter}
   </delete>
   <delete id="DeleteBatch" parameterType="java.util.List">
@@ -50,6 +56,12 @@
     </foreach>
     )
   </delete>
+  
+  
+  
+    <insert id="CreateOne" parameterType="zut.cs.network.bean.Message">
+    INSERT INTO MESSAGE (COMMAND, DESCRIPTION, CONTENT) VALUES (#{command}, #{description}, #{content})
+  </insert>
   
   <!-- <select id="version" parameterType="long" resultType="int">
     SELECT version FROM user WHERE id = #{id,jdbcType=INTEGER}

@@ -33,4 +33,12 @@ public class MaintainService {
 			messageDao.DeleteBatch(list);
 
 	}
+	/**
+	 * 增加消息
+	 */
+	public void CreateOne(String command, String description, String content) {
+		// TODO Auto-generated method stub
+		MessageDao messageDao = new MessageDao();
+		messageDao.CreateOne(command, description, content);
+	}
 }

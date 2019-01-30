@@ -17,7 +17,7 @@ public class DBAccess {
  public SqlSession getSqlSession() throws IOException
  {
 	 
-	Reader reader=Resources.getResourceAsReader("/zut/cs/network/config/Configuration.xml");
+	Reader reader=Resources.getResourceAsReader("zut/cs/network/config/Configuration.xml");
 	SqlSessionFactory sqlSessionFactory = new  SqlSessionFactoryBuilder().build(reader);
 	SqlSession sqlSession =sqlSessionFactory.openSession();	
 		

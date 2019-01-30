@@ -6,6 +6,8 @@ import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 
+import com.sun.mail.handlers.message_rfc822;
+
 import zut.cs.network.bean.Message;
 import zut.cs.network.db.DBAccess;
 
@@ -67,6 +69,29 @@ public class MessageDao {
 		try {
 			sqlSession = dbAccess.getSqlSession();
 			sqlSession.delete("Message.DeleteBatch",ids);
+			sqlSession.commit();
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			if (sqlSession != null)
+				sqlSession.close();
+		}
+	}
+	public void  CreateOne(String command, String description, String content) {
+		/**
+		 * 新增一条信息
+		 */
+		DBAccess dbAccess = new DBAccess();
+		SqlSession sqlSession = null;
+		Message message =new  Message();
+		message.setCommand(command);
+		message.setDescription(description);
+		message.setContent(content);
+		try {
+			sqlSession = dbAccess.getSqlSession();
+			sqlSession.insert("Message.CreateOne", message);
 			sqlSession.commit();
 			
 		} catch (IOException e) {
