@@ -42,6 +42,9 @@
 
   <mappers>
     <mapper resource="zut/cs/network/config/sqlxml/Message.xml"/>
+    <mapper resource="zut/cs/network/config/sqlxml/Command.xml"/>
+    <mapper resource="zut/cs/network/config/sqlxml/CommandContent.xml"/>
   </mappers>
 
 </configuration>
+
