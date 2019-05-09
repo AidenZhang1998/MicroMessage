@@ -76,4 +76,18 @@
     <servlet-name>CreateOneServlet</servlet-name>
     <servlet-class>zut.cs.network.servlet.CreateOneServlet</servlet-class>
   </servlet>
+  
+  
+    <servlet>
+    <servlet-name>EditServlet</servlet-name>
+    <servlet-class>zut.cs.network.servlet.EditServlet</servlet-class>
+  </servlet>
+  
+  
+  <servlet-mapping>
+    <servlet-name>EditServlet</servlet-name>
+    <url-pattern>/EditMessage.action </url-pattern>
+  </servlet-mapping>
+  
+  
 </web-app>

@@ -6,7 +6,6 @@ import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 
-import com.sun.mail.handlers.message_rfc822;
 
 import zut.cs.network.bean.Message;
 import zut.cs.network.db.DBAccess;
@@ -41,6 +40,26 @@ public class MessageDao {
 		
 		return messageList;
 	}
+	public List<Message> listMessageById(List<Integer> ids) {
+        List<Message> messageList = new ArrayList<Message>();
+        DBAccess dbAccess = new DBAccess();
+		SqlSession sqlSession = null;
+        try {
+            sqlSession = dbAccess.getSqlSession();
+            //通过sqlSession执行sql语句
+            messageList = sqlSession.selectList("Message.listMessageById", ids);
+        } 
+        catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        finally {
+            if(sqlSession!=null) {
+                sqlSession.close();
+            }
+        }
+        return messageList;
+    }
 	public void  DeleteOne(int id) {
 		/**
 		 * 根据删除条件删除一条消息
@@ -101,7 +120,29 @@ public class MessageDao {
 			if (sqlSession != null)
 				sqlSession.close();
 		}
+		
 	}
+	 /**
+     * 更新一条
+     */
+    public void Update(Message message){
+    	DBAccess dbAccess = new DBAccess();
+		SqlSession sqlSession = null;
+        try {
+            sqlSession = dbAccess.getSqlSession();
+            //通过sqlSession执行sql语句
+            sqlSession.update("Message.update", message);
+            sqlSession.commit();
+        } catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+        }finally {
+            if(sqlSession!=null){
+                sqlSession.close();
+            }
+        }
+    }
+    
 	/*
 	 * try { Class.forName("com.mysql.jdbc.Driver"); Connection conn =
 	 * DriverManager.getConnection(

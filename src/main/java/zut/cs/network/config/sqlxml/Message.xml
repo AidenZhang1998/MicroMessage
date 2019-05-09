@@ -63,6 +63,20 @@
     INSERT INTO MESSAGE (COMMAND, DESCRIPTION, CONTENT) VALUES (#{command}, #{description}, #{content})
   </insert>
   
+  
+  
+   <update id="update" parameterType="zut.cs.network.bean.Message">
+    UPDATE MESSAGE SET COMMAND = #{command}, DESCRIPTION = #{description}, CONTENT = #{content} WHERE ID = #{id}
+  </update>
+  
+  
+  <select id="listMessageById" parameterType="java.util.List" resultMap="MessageResult">
+    SELECT ID, COMMAND, DESCRIPTION, CONTENT FROM MESSAGE WHERE ID IN (
+      <foreach collection="list" item="item" separator=",">
+        #{item}
+      </foreach>
+    )
+  </select>
   <!-- <select id="version" parameterType="long" resultType="int">
     SELECT version FROM user WHERE id = #{id,jdbcType=INTEGER}
   </select>

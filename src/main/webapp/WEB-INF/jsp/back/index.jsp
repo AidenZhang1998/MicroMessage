@@ -56,7 +56,7 @@
 										<td>${message.command}</td>
 										<td>${message.description}</td>
 										<td>
-											<a href="#">修改</a>&nbsp;&nbsp;&nbsp;
+											<a href="${basePath}EditMessage.action?id=${message.id}">修改</a>&nbsp;&nbsp;&nbsp;
 											<a href="${basePath}DeleteOneServlet.action?id=${message.id}">删除</a>
 										</td>
 									</tr>

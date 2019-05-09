@@ -3,3 +3,4 @@ encoding//src/main/java/zut/cs/network/servlet/DeleteBatchServlet.java=UTF-8
 encoding//src/main/webapp/WEB-INF/jsp/back/index.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/jsp/front/talk.jsp=UTF-8
 encoding/<project>=UTF-8
+separateDerivedEncodings=true

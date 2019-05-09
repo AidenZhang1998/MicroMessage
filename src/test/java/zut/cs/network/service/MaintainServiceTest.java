@@ -1,9 +1,7 @@
 package zut.cs.network.service;
+import junit.*;
 
 
-
-import org.junit.Before;
-import org.junit.Test;
 
 public class MaintainServiceTest {
 	/*MaintainService maintainService;

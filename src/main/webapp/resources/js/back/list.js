@@ -25,3 +25,20 @@ function CreateOne(basePath) {
 	$("#mainForm").submit();*/
 
 }
+function UpdateOne(basePath) {
+	if (document.getElementById("command").value == "") {
+		alert("请输入指令");
+		
+	} else if (document.getElementById("description").value == "") {
+		alert("请输入描述");
+	
+	} else if (document.getElementById("content").value == "") {
+		alert("请输入内容");
+		
+	} else {
+		alert("成功");			
+	}
+	/*$("#mainForm").attr("action", basePath + "CreateOneServlet.action");
+	$("#mainForm").submit();*/
+
+}

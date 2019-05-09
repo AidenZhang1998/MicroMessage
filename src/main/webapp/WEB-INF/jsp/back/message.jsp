@@ -7,7 +7,7 @@
 %>
 <html>
 <head>
-<title>增加message</title>
+<title>message</title>
 <script src="<%=basePath%>/resources/js/back/list.js"></script>
 <style>
 #msgForm>div+div {
@@ -64,8 +64,7 @@
 				onclick="javascript:location.href='${basePath}List.action'"
 				type="button" title="返回" value="返回" /> 
 			<input type="submit" onclick="CreateOne('<%=basePath%>');"
-				value="注册" />
-
+				value="确定" />
 		</div>
 	</form>
 </body>

@@ -1,5 +1,6 @@
 package zut.cs.network.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -41,6 +42,17 @@ public String queryByCommand(String command) {
 		return contentList.get(i).getContent();
 	}
 	return Iconst.NO_MATCHING_CONTENT;
+}
+
+public Message findMessageById(String id){
+    List<Integer> ids = new ArrayList<Integer>();
+    ids.add(Integer.valueOf(id));
+    List<Message> messageList = new MessageDao().listMessageById(ids);
+    if(messageList.size()==1){
+        return messageList.get(0);
+    }else {
+        return null;
+    }
 }
 /*public String queryByCommand(String command) {
 	MessageDao messageDao = new MessageDao();

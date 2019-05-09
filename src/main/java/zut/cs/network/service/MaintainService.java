@@ -3,6 +3,7 @@ package zut.cs.network.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import zut.cs.network.bean.Message;
 import zut.cs.network.dao.MessageDao;
 
 /**
@@ -41,4 +42,22 @@ public class MaintainService {
 		MessageDao messageDao = new MessageDao();
 		messageDao.CreateOne(command, description, content);
 	}
+	 /**
+     * 修改一条
+     */
+    public void update(String id, String command, String description, String content){
+        List<Integer> ids = new ArrayList<Integer>();
+        ids.add(Integer.valueOf(id));
+        MessageDao messageDao = new MessageDao();
+        //校验该id是否存在
+        List<Message> existingMessages = messageDao.listMessageById(ids);
+        if(existingMessages.size() > 0){
+            Message message = new Message();
+            message.setId(id);
+            message.setCommand(command);
+            message.setDescription(description);
+            message.setContent(content);
+            messageDao.Update(message);
+        }
+    }
 }
